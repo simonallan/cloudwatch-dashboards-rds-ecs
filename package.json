@@ -5,11 +5,12 @@
     "cloudwatch-dashboards-rds-ecs": "bin/cloudwatch-dashboards-rds-ecs.js"
   },
   "lint-staged": {
-    "!(*.ts)": "prettier --write",
+    "*.json": "prettier --write",
     "*.ts": [
       "eslint --fix",
       "prettier --write"
-    ]
+    ],
+    "*.md": "prettier --list-different"
   },
   "scripts": {
     "build": "tsc",
