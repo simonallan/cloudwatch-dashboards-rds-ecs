@@ -1,0 +1,27 @@
+# Ignore artifacts:
+build
+coverage
+
+# eslint
+.eslintcache
+
+# Production
+*.js
+!jest.config.js
+**/bin/*.js
+node_modules
+*.config.js
+*.d.ts
+*.validation.ts
+tsconfig.json
+
+# CDK asset staging directory
+cdk.out
+cdk.json
+
+# misc
+.DS_Store
+.vscode
+.cache
+
+
