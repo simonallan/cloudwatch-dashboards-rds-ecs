@@ -4,20 +4,38 @@
   "bin": {
     "cloudwatch-dashboards-rds-ecs": "bin/cloudwatch-dashboards-rds-ecs.js"
   },
+  "lint-staged": {
+    "*.json": "prettier --write",
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.md": "prettier --list-different"
+  },
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "@eslint/js": "^9.14.0",
     "@types/jest": "^29.5.12",
     "@types/node": "22.5.4",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.2.5",
     "aws-cdk": "2.164.1",
+    "eslint": "^9.14.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-jest": "^28.9.0",
+    "globals": "^15.12.0",
+    "husky": "^9.1.6",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.10",
+    "prettier": "3.3.3",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
-    "typescript": "~5.6.2"
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.14.0"
   },
   "dependencies": {
     "aws-cdk-lib": "2.164.1",
