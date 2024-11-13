@@ -1,6 +1,6 @@
-# Welcome to your CDK TypeScript project
+# CDK Cloudwatch Dashboards
 
-This is a blank project for CDK development with TypeScript.
+This is a basic project to explore creating CloudWatch Dashboards with CDK
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
