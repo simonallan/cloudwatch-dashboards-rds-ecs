@@ -1,16 +1,16 @@
 import * as cdk from "aws-cdk-lib";
 import { Construct } from "constructs";
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+import Monitoring from "../lib/monitoring-stack";
 
+interface MonitoringStackProps extends cdk.StackProps {
+  readonly environment: string;
+}
 export class CloudwatchDashboardsRdsEcsStack extends cdk.Stack {
-  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+  constructor(scope: Construct, id: string, props: MonitoringStackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
-
-    // example resource
-    // const queue = new sqs.Queue(this, 'CloudwatchDashboardsRdsEcsQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    new Monitoring(this, "Monitoring", {
+      clusterName: `ofr-fws-application-${props.environment}`,
+    });
   }
 }
