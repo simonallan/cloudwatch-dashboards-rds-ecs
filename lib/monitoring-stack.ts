@@ -15,6 +15,11 @@ export default class Monitoring extends Construct {
       start: "-P3H",
     });
 
+    /*
+     * Just a test - we'll call sub-constructs (is that a thing?) from here instead
+     * as seen at https://codegenie.codes/blog/creating-aws-cloudwatch-dashboards-and-alarms-with-cdk/
+     */
+
     this.dashboard.addWidgets(
       new TextWidget({
         markdown: `## ${props.clusterName} rds metrics`,
